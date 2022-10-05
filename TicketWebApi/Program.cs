@@ -1,21 +1,23 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using TicketDb;
 using TicketRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddDbContext<ITicketRepository, TicketRepository>(o => o.UseSqlServer(""));
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+Console.WriteLine(" ==========> " + connectionString);
+builder.Services.AddDbContext<TicketContext>(o 
+            => o.UseSqlServer(
+                "Data Source=ACONTABLE14\\SQLSIGMAVER;Initial Catalog=Ticket;User Id=sa;Password=123456papichulo;MultipleActiveResultSets=True;"
+            ));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
