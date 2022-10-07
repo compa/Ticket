@@ -1,6 +1,5 @@
 ﻿namespace TicketDb;
 
-using TicketRepository;
 using Microsoft.EntityFrameworkCore;
 
 public class TicketContext : DbContext 
