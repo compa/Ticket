@@ -10,7 +10,7 @@ builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<TicketContext>(o => o.UseSqlServer(connectionString));
-builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<ITicketRepository, TicketRepository.TicketRepository>();
 
 var app = builder.Build();
 

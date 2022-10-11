@@ -1,6 +1,7 @@
 ﻿namespace TicketDb;
-public class TipoMunicipio 
+public class TipoCliente 
 {
     public int Id { get; set; }
+    public string clave { get; set; }
     public string nombre { get; set; }
 }

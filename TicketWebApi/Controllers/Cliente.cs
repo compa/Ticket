@@ -8,15 +8,15 @@ namespace TicketWebApi.Controllers;
 [Route("[controller]")]
 public class ClienteController : ControllerBase
 {
-    private IClienteRepository _cr;
-    public ClienteController(IClienteRepository cr)
+    private ITicketRepository _db;
+    public ClienteController(ITicketRepository db)
     {
-        _cr = cr;
+        _db = db;
     }
 
     [HttpGet(Name = "Get")]
     public List<Cliente> Get()
     {
-        return _cr.Get();  
+        return _db.Clientes.List();  
     }
 }

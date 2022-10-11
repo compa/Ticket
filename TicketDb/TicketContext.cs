@@ -23,7 +23,15 @@ public class TicketContext : DbContext
         );*/
     }
 
-    public DbSet<TipoMunicipio> TipoMunicipios { get; set; }
+    public DbSet<TipoCliente> TipoClientes { get; set; }
     public DbSet<Cliente> Clientes { get; set; }
+    public DbSet<MedioContacto> MedioContactos { get; set; }
+    public DbSet<Ejercicio> Ejercicios { get; set; }
+    public DbSet<Departamento> Departamentos { get; set; }
+    public DbSet<Asunto> Asuntos { get; set; }
+    public DbSet<Rol> Rol { get; set; }
+    public DbSet<Status> Status { get; set; }
+    public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Ticket> Tickets { get; set; }
+    public DbSet<TicketDetalle> TicketDetalles { get; set; }
 }

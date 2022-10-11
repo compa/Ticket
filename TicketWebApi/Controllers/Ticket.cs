@@ -13,8 +13,8 @@ public class TicketController : ControllerBase
     }
 
     [HttpGet(Name = "Getf")]
-    public TipoMunicipio Get()
+    public TipoCliente Get()
     {
-        return _tc.TipoMunicipios.FirstOrDefault();  
+        return _tc.TipoClientes.FirstOrDefault();  
     }
 }
