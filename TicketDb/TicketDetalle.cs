@@ -13,7 +13,7 @@ public class TicketDetalle
     public int StatusId { get; set; }
 
     [ForeignKey("TicketDetalle")]
-    public int super { get; set; }
+    public int? super { get; set; }
     public Usuario Usuario { get; set; }
     public Asunto Asunto { get; set; }
     public Status Status { get; set; }

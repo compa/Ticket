@@ -14,13 +14,24 @@ public class TicketContext : DbContext
     {
         _connectionString = connectionString;
     }
-
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        /*
+        modelBuilder.C
+        modelBuilder.Entity<TicketDetalle>()
+            .HasRequired(c => c.TicketDetalles)
+            .WithMany()
+            .WillCascadeOnDelete(false);
+            */
+    }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        /*optionsBuilder.UseSqlServer(
+        optionsBuilder.UseSqlServer(
             "Data Source=ACONTABLE14\\SQLSIGMAVER;Initial Catalog=Ticket;User Id=sa;Password=123456papichulo;MultipleActiveResultSets=True;",
             b=> b.MigrationsAssembly("TicketWebApi")
-        );*/
+        );
+        
     }
 
     public DbSet<TipoCliente> TipoClientes { get; set; }

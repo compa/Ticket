@@ -2,7 +2,7 @@
 
 namespace TicketRepository;
 
-public interface ITicketDetalleEntityRepository : IRepositoryEntity<Ticket>
+public interface ITicketDetalleEntityRepository : IRepositoryEntity<TicketDetalle>
 {
     
 }

@@ -84,15 +84,19 @@ public class TicketRepository : ITicketRepository
    { 
       get
       {
-         return null;
+         return new TicketEntityRepository(_db);
       }
    }
    public ITicketDetalleEntityRepository TicketDetalles
    { 
       get
       {
-         return null;
+         return new TicketDetalleEntityRepository(_db);
       }
    }
 
+   public void Save()
+   {
+      _db.SaveChanges();
+   }
 }

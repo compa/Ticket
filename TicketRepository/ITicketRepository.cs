@@ -12,9 +12,9 @@ public interface ITicketRepository
     public IMedioContactoEntityRepository MedioContactos { get; }
     public IClienteEntityRepository Clientes { get; }
     public IStatusEntityRepository Status { get; }
-    public ITipoClienteEntityRepository TipoCliente { get; }
     public IUsuarioEntityRepository Usuario { get; }
     public ITicketEntityRepository Tickets { get; }
     public ITicketDetalleEntityRepository TicketDetalles { get; }
+    public void Save();
 }
 
